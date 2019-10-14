@@ -18,20 +18,70 @@
             <!-- Top row, always visible -->
             <div class="mdl-layout__header-row">
                 <!-- Title -->
-                <span class="mdl-layout-title">Data and Storage</span>
+                <span class="mdl-layout-title">智能投饵机设定</span>
             </div>
         </header>
         <main class="mdl-layout__content" id="app">
             <!-- 一个设置组 -->
             <div class="mdl-grid">
-                
+                <div class="mdl-grid setting_title mdl-color-text--primary">
+                    时间设定
+                </div>
+                <div class="mdl-grid setting_row">
+                    <div class="mdl-cell input_half">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="([0-9]:)+" id="time0">
+                            <label class="mdl-textfield__label">开机时间</label>
+                            <span class="mdl-textfield__error">时间格式错误</span>
+                        </div>
+                    </div>
+                    <div class="mdl-cell input_half">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="([0-9]:)+" id="time1">
+                            <label class="mdl-textfield__label">关机时间</label>
+                            <span class="mdl-textfield__error">时间格式错误</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-grid setting_title mdl-color-text--primary">
+                    投饵设定
+                </div>
+                <div class="mdl-grid setting_row">
+                    <div class="mdl-cell input_half">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="[0-9]+" id="amount">
+                            <label class="mdl-textfield__label">投饵量</label>
+                            <span class="mdl-textfield__error">数值格式错误</span>
+                        </div>
+                    </div>
+                    <div class="mdl-cell input_half">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="text" pattern="[0-9]+" id="distance">
+                            <label class="mdl-textfield__label">距离</label>
+                            <span class="mdl-textfield__error">数值格式错误</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mdl-grid setting_row_submit">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                        提交
+                    </button>
+                </div>
+                <div class="mdl-grid setting_title mdl-color-text--primary">
+                    环境监测
+                </div>
             </div>
         </main>
+        <div class="button_float">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
+                <i class="material-icons">send</i>
+            </button>
+        </div>
     </div>
     <script>
         var app = new Vue({el: '#app',
             data: {
-                items: []
+                settings: []
             }
         });
     </script>
