@@ -1,5 +1,9 @@
 .mdl-layout__header-row {
-    padding: 0 16px;
+    padding: 0 8px;
+}
+
+.mdl-layout-title{
+    padding: 0 8px;
 }
 
 .setting_title{
@@ -31,6 +35,6 @@
 .button_float {
     z-index: 10;
     position: fixed;
-    right: 40px;
-    bottom: 40px;
+    right: 20px;
+    bottom: 20px;
 }

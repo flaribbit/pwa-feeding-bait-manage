@@ -18,6 +18,9 @@
             <!-- Top row, always visible -->
             <div class="mdl-layout__header-row">
                 <!-- Title -->
+                <button class="mdl-button mdl-js-button mdl-button--icon" onclick="location='index.html'">
+                <i class="material-icons">arrow_back</i>
+                </button>
                 <span class="mdl-layout-title">智能投饵机设定</span>
             </div>
         </header>
@@ -63,7 +66,7 @@
                     </div>
                 </div>
                 <div class="mdl-grid setting_row_submit">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                    <button id="button_submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
                         提交
                     </button>
                 </div>
@@ -73,7 +76,7 @@
             </div>
         </main>
         <div class="button_float">
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect" id="button_submit">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
                 <i class="material-icons">send</i>
             </button>
         </div>
