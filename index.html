@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+    <title>智能投饵机管理系统</title>
     <script src="js/vue.js"></script>
     <script src="js/material.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -20,7 +21,7 @@
                 <!-- Top row, always visible -->
                 <div class="mdl-layout__header-row">
                     <!-- Title -->
-                    <span class="mdl-layout-title">智能投饵机</span>
+                    <span class="mdl-layout-title">智能投饵机管理系统</span>
                 </div>
             </header>
             <main id="app_main" class="mdl-layout__content">
@@ -28,7 +29,7 @@
                     状态总览
                 </div>
                 <div class="mdl-grid">
-                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -36,11 +37,11 @@
                                 <th>开机时间</th>
                                 <th>关机时间</th>
                                 <th>投饵量</th>
-                                <th>投饵距离</th>
+                                <th>距离</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="item in items">
+                            <tr v-for="item in items" v-bind:class="{row_error: error}">
                                 <td>{{item.id}}</td>
                                 <td>{{item.status}}</td>
                                 <td>{{item.time0}}</td>
@@ -52,6 +53,11 @@
                     </table>
                 </div>
             </main>
+            <div class="button_float">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
+                    <i class="material-icons">send</i>
+                </button>
+            </div>
         </div>
     </div>
     <script>

@@ -12,10 +12,21 @@
     width: 100%;
 }
 .mdl-data-table th {
-    padding: 0 8px 12px 8px;
+    padding: 0 4px 12px 4px;
     text-align: right;
 }
 
 .mdl-data-table td{
-    padding: 12px 8px;
+    padding: 12px 4px;
+}
+
+.row_error {
+    background: pink;
+}
+
+.button_float {
+    z-index: 10;
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
 }
