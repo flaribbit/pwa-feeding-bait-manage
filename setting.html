@@ -73,9 +73,13 @@
             </div>
         </main>
         <div class="button_float">
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect" id="button_submit">
                 <i class="material-icons">send</i>
             </button>
+        </div>
+        <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
         </div>
     </div>
     <script>
@@ -84,5 +88,10 @@
                 settings: []
             }
         });
+        document.getElementById("button_submit").onclick=function(){
+            document.getElementById("toast").MaterialSnackbar.showSnackbar({
+                message: "新数据已提交"
+            })
+        }
     </script>
 </body>
