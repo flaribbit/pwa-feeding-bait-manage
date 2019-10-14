@@ -22,6 +22,16 @@
                 <div class="mdl-layout__header-row">
                     <!-- Title -->
                     <span class="mdl-layout-title">智能投饵机管理系统</span>
+                    <span class="mdl-layout-spacer"></span>
+                    <button id="demo-menu-lower-right"
+                        class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                        for="demo-menu-lower-right">
+                        <li class="mdl-menu__item" onclick="location.reload()">刷新</li>
+                        <li class="mdl-menu__item" onclick="location='setting.html'">更改参数</li>
+                    </ul>
                 </div>
             </header>
             <main id="app_main" class="mdl-layout__content">
