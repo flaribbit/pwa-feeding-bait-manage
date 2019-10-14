@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="js/vue.js"></script>
+    <script src="js/material.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/material.css">
+    <link rel="stylesheet" href="css/material.blue-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+    <style>
+        .mdl-layout__header-row{
+            padding: 0 16px;
+        }
+        .movie_img {
+            width: 100%;
+            height: auto;
+        }
+        .item_title {
+            color: black;
+            font-size: 20px;
+        }
+        .item_left{
+            width: 40%;
+        }
+        .item_right{
+            width: calc(60% - 32px);
+        }
+        .item_setting{
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .text_setting_head{
+            padding: 4px 8px;
+            margin: 0;
+            width: 100%;
+        }
+        .text_setting_left{
+            padding: 4px 0;
+            margin: 0;
+            width: 100%;
+            color: black;
+            font-size: 14px;
+        }
+        .text_setting_left2{
+            padding: 4px 0;
+            margin: 0;
+            width: 100%;
+            color: gray;
+            font-size: 12px;
+        }
+        .text_setting_box{
+            padding: 4px 8px;
+            margin: 0;
+            align-items:center;
+            width: calc(100% - 76px);
+        }
+        .switch_box{
+            width: 60px;
+            margin: 20px 0;
+        }
+    </style>
+    <div class="demo-layout-waterfall mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--waterfall">
+            <!-- Top row, always visible -->
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Data and Storage</span>
+                <span class="mdl-layout-spacer"></span>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                                  mdl-textfield--floating-label mdl-textfield--align-right">
+                    <label class="mdl-button mdl-js-button mdl-button--icon" for="waterfall-exp">
+                        <i class="material-icons">search</i>
+                    </label>
+                    <div class="mdl-textfield__expandable-holder">
+                        <input class="mdl-textfield__input" type="text" name="sample" id="waterfall-exp">
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="mdl-layout__content" id="app">
+            <!-- 一个设置组 -->
+            <div class="mdl-grid">
+                <div class="mdl-color-text--primary mdl-typography--font-bold text_setting_head">
+                    Automatic media download
+                </div>
+                <!-- 一个设置项 -->
+                <div class="mdl-grid item_setting" v-for="setting in settings">
+                    <div class="mdl-grid text_setting_box">
+                        <div class="mdl-grid text_setting_left">
+                            {{setting.title}}
+                        </div>
+                        <div class="mdl-grid text_setting_left2">
+                            {{setting.desc}}
+                        </div>
+                    </div>
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect switch_box">
+                        <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                        <span class="mdl-switch__label"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="mdl-grid">
+                <div class="mdl-color-text--primary mdl-typography--font-bold text_setting_head">
+                    Auto-play media
+                </div>
+                <!-- 一个设置项 -->
+                <div class="mdl-grid item_setting" v-for="setting in settings2">
+                    <div class="mdl-grid text_setting_box">
+                        <div class="mdl-grid text_setting_left">
+                            {{setting.title}}
+                        </div>
+                        <div class="mdl-grid text_setting_left2" v-if="setting.desc">
+                            {{setting.desc}}
+                        </div>
+                    </div>
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect switch_box">
+                        <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+                        <span class="mdl-switch__label"></span>
+                    </label>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        var app = new Vue({el: '#app',
+            data: {
+                items: [],
+                settings: [{
+                    title: "When uaing mobile data",
+                    desc: "Photos, Videos (10 MB), Files (1 MB)"
+                },{
+                    title: "When connected on Wi-Fi",
+                    desc: "Photos, Videos (15 MB), Files (3 MB)"
+                },{
+                    title: "When roaming",
+                    desc: "Photos"
+                }],
+                settings2: [{
+                    title: "GIFs",
+                    desc: "GIFs are different from videos"
+                },{
+                    title: "Videos"
+                }]
+            }
+        });
+    </script>
+</body>

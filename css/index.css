@@ -1,0 +1,21 @@
+.mdl-layout__header-row {
+    padding: 0 16px;
+}
+
+.text_page_title {
+    font-weight: bold;
+    padding: 8px 8px;
+    margin: 0;
+}
+
+.mdl-data-table {
+    width: 100%;
+}
+.mdl-data-table th {
+    padding: 0 8px 12px 8px;
+    text-align: right;
+}
+
+.mdl-data-table td{
+    padding: 12px 8px;
+}
