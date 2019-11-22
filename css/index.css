@@ -11,6 +11,8 @@
 .no-space{
     padding: 0;
     margin: 0;
+    width: 100%;
+    align-items: center;
 }
 
 .machine-cell-container{
@@ -28,8 +30,13 @@
 }
 
 .machine-cell-id{
+    margin: 0;
     padding: 8px 4px;
     font-size: 22px;
+}
+
+.mdl-checkbox{
+    width: auto;
 }
 
 .machine-cell-text{
@@ -37,7 +44,7 @@
 }
 
 .machine-status-normal {
-    background: #dcedc8;
+    background: #b3e5fc;
 }
 
 .machine-status-error {
