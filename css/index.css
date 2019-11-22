@@ -2,26 +2,38 @@
     padding: 0 16px;
 }
 
-.text_page_title {
+.text_section_title {
     font-weight: bold;
     padding: 8px 8px;
     margin: 0;
 }
 
-.mdl-data-table {
+.no-space{
+    padding: 0;
+    margin: 0;
+}
+
+.machine-cell-container{
+    margin: 0;
+    padding: 4px;
+    width: 120px;
+}
+
+.machine-cell {
+    margin: 0;
+    padding: 4px;
+    border-radius: 4px;
     width: 100%;
-}
-.mdl-data-table th {
-    padding: 0 4px 12px 4px;
-    text-align: right;
+    cursor: pointer;
 }
 
-.mdl-data-table td{
-    padding: 12px 4px;
+.machine-cell-id{
+    padding: 8px 4px;
+    font-size: 22px;
 }
 
-.row_error {
-    background: pink;
+.machine-cell-text{
+    padding: 4px;
 }
 
 .button_float {

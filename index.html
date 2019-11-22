@@ -35,32 +35,23 @@
                 </div>
             </header>
             <main id="app_main" class="mdl-layout__content">
-                <div class="mdl-grid text_page_title mdl-color-text--primary">
-                    状态总览
+                <div class="mdl-grid text_section_title mdl-color-text--primary">
+                    投饵机列表
                 </div>
-                <div class="mdl-grid">
-                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>状态</th>
-                                <th>开机时间</th>
-                                <th>关机时间</th>
-                                <th>投饵量</th>
-                                <th>距离</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="item in items" v-bind:class="{row_error: item.error}">
-                                <td>{{item.id}}</td>
-                                <td>{{item.status}}</td>
-                                <td>{{item.time0}}</td>
-                                <td>{{item.time1}}</td>
-                                <td>{{item.amount}}</td>
-                                <td>{{item.distance}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="mdl-grid no-space">
+                    <div class="mdl-cell machine-cell-container" v-for="item in items" style="cursor:hand" onclick="a">
+                        <div class="mdl-cell machine-cell mdl-shadow--2dp">
+                            <div class="mdl-grid machine-cell-id">
+                                #{{item.id}}
+                            </div>
+                            <div class="mdl-grid machine-cell-text">
+                                状态：{{item.status}}
+                            </div>
+                            <div class="mdl-grid machine-cell-text">
+                                饵量：{{item.amount}}kg
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </main>
             <div class="button_float">
@@ -77,13 +68,13 @@
                 items:[]
             }
         });
-        for(let i=0;i<16;i++){
+        for(let i=0;i<160;i++){
             app.items.push({
-                id: i,
+                id: i+1,
                 status: "正常",
                 time0: "00:00",
                 time1: "23:59",
-                amount: Math.floor(200*Math.random()),
+                amount: Math.floor(40*Math.random()),
                 distance: Math.floor(100*Math.random()),
                 error: false
             })
