@@ -40,7 +40,7 @@
                 </div>
                 <div class="mdl-grid no-space">
                     <div class="mdl-cell machine-cell-container" v-for="item in items" style="cursor:hand" onclick="a">
-                        <div class="mdl-cell machine-cell mdl-shadow--2dp">
+                        <div class="mdl-cell machine-cell mdl-shadow--2dp" v-bind:class="{'machine-status-normal':item.normal,'machine-status-offline':item.offline,'machine-status-error':item.error}">
                             <div class="mdl-grid machine-cell-id">
                                 #{{item.id}}
                             </div>
@@ -69,15 +69,28 @@
             }
         });
         for(let i=0;i<160;i++){
-            app.items.push({
+            let t={
                 id: i+1,
-                status: "正常",
                 time0: "00:00",
                 time1: "23:59",
                 amount: Math.floor(40*Math.random()),
                 distance: Math.floor(100*Math.random()),
+                normal: false,
+                offline: false,
                 error: false
-            })
+            };
+            let rand=Math.random();
+            if(rand<0.2){
+                t.status="离线";
+                t.offline=true;
+            }else if(rand<0.4){
+                t.status="错误";
+                t.error=true;
+            }else{
+                t.status="正常";
+                t.normal=true;
+            }
+            app.items.push(t)
         }
         // $.getJSON("https://demoapp-server.herokuapp.com/",data=>{
         //     app.items=data

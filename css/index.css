@@ -36,6 +36,18 @@
     padding: 4px;
 }
 
+.machine-status-normal {
+    background: #dcedc8;
+}
+
+.machine-status-error {
+    background: #f8bbd0;
+}
+
+.machine-status-offline {
+    background: white;
+}
+
 .button_float {
     z-index: 10;
     position: fixed;
