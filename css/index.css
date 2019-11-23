@@ -8,6 +8,17 @@
     margin: 0;
 }
 
+.mdl-cell{
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+}
+
+p{
+    margin: 0;
+    padding: 0 0 8px 0;
+}
+
 .no-space{
     padding: 0;
     margin: 0;
@@ -18,7 +29,13 @@
 .machine-cell-container{
     margin: 0;
     padding: 4px;
-    width: 120px;
+    width: 33.3%;
+}
+
+@media (min-width: 500px){
+    .machine-cell-container{
+        width: 120px;
+    }
 }
 
 .machine-cell {
